@@ -4,7 +4,7 @@
 		<head>
 			<meta charset="UTF-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>Train Schedule App</title>
+			<title>Puddle Jumper Schedule App</title>
 
 			<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -20,7 +20,7 @@
 
 			<div class="container">
 				<div class="jumbotron">
-					<h1 class="text-center">Train Schedule App</h1>
+					<h1 class="text-center">Puddle Jumper Schedule</h1>
 					<h4 class="text-center">Never Be Left Behind!</h4>
 				</div>
 
@@ -28,15 +28,15 @@
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h3 class="panel-title">Current Train Schedule</h3>
+								<h3 class="panel-title">Current Puddle Jumper Schedule</h3>
 							</div>
 							<div class="panel-body" id="well-section">
-								<table id="trains">
+								<table id="jumpers">
 								<tr>
-									<th>Train Name</th>
+									<th>Jumper Name</th>
 									<th>Destination</th>
-									<th>Frequency (min)</th>
 									<th>Next Arrival</th>
+									<th>Frequency (min)</th>
 									<th>Minutes Away</th>
 								</tr>
 								</table>
@@ -49,12 +49,12 @@
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h3 class="panel-title">Add Train</h3>
+								<h3 class="panel-title">Add Puddle Jumper</h3>
 							</div>
 							<div class="panel-body">
 									<div class="form-group">
-										<label for="train-name">Train Name</label>
-										<input type="text" class="form-control" id="train-name">
+										<label for="jumper-name">Puddle Jumper Name</label>
+										<input type="text" class="form-control" id="jumper-name">
 									</div>
 
 									<div class="form-group">
@@ -63,8 +63,8 @@
 									</div>
 
 									<div class="form-group">
-										<label for="first-train">First Train Time (HH:mm - military time)</label>
-										<input type="text" class="form-control" id="first-train">
+										<label for="first-jumper">First Jumper Time (HH:mm - military time)</label>
+										<input type="text" class="form-control" id="first-jumper">
 									</div>
 
 									<div class="form-group">

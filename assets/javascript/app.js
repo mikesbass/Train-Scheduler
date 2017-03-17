@@ -16,7 +16,7 @@
 			row.append( $( '<td>' ).append( childObject.start ) );
 			row.append( $( '<td>' ).append( childObject.rate ) );
 			console.log( row );
-			$( '#trains' ).append( row );
+			$( '#jumpers' ).append( row );
 
 		},
 
@@ -46,12 +46,66 @@
 				app.appendTableRow( childSnapshot.val() );
 			} );
 
+			var jumperData = '',
+        name = '',
+        destination = '',
+        firstJumper = '',
+        frequency = '';
+
+  	jumpers.on("child_added", function (childSnapshot) {
+    jumperData = childSnapshot.val(),
+    name = jumperData.name,
+    destination = jumperData.destination,
+    firstJumper = jumperData.first_jumper,
+    frequency = jumperData.frequency;
+    
+    buildSchedule(name, destination, firstJumper, frequency);
+    
+  }, errData);
+  function errData(data) {
+    console.log(data);
+  }
+
+  function buildSchedule(name, destination, firstJumper, frequency) {
+    var newRow = $("<tr>"),
+        mdlCellClass = "mdl-data-table__cell--non-numeric",
+        nextJumper = getNextJumper(firstJumper, frequency);
+
+    console.log(getNextJumper(firstJumper, frequency));
+
+			function getNextJumper(start, interval)
+			{
+				var now = moment(),
+				hours= start.substr
+			}
+
+			function getNextJumper(start, interval) {
+    var now = moment(),
+        hours = start.substr(0, 2),
+        minutes = start.substr(3, 4),
+        jumpers = moment().startOf('day').hour(parseInt(hours)).minute(parseInt(minutes)),
+        duration = moment.duration(now.diff(jumpers)).asMinutes(),
+        minutesUntil = duration % interval,
+        nextJumper = interval - minutesUntil,
+        newJumper = now.add(nextJumper, "minutes").format("HH:MM");
+    
+			    return moment(now).format("h:mm a"); 
+			  }
+ 				console.log(newJumper); 
+
+			  function resetFields() {
+			    $("#jumper-name").val("");
+			    $("#destination").val("");
+			    $("#first-jumper").val("");
+			    $("#frequency").val("");
+			  }
+
 			$( "#submit-btn" ).click(
 
 				function () {
-					var name = $( "#train-name" ).val().trim();
+					var name = $( "#jumper-name" ).val().trim();
 					var role = $( "#destination" ).val().trim();
-					var start = $( "#first-train" ).val().trim();
+					var start = $( "#first-jumper" ).val().trim();
 					var rate = $( "#frequency" ).val().trim();
 					app.defaultDatabase.ref().push( {
 						name: name,
@@ -60,6 +114,8 @@
 						rate: rate,
 						dateAdded: firebase.database.ServerValue.TIMESTAMP
 					} );
+
+					resetFields();
 				}
 			);
 
@@ -78,4 +134,4 @@
 
 
 
-}() );
+};

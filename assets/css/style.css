@@ -1,46 +1,55 @@
 
-* {
+* 
+{
   box-sizing: border-box;
 }
 
-body{
-	/*background: url('https://thumbs.dreamstime.com/z/human-resources-crm-data-mining-officer-looking-employee-represented-icon-vector-illustration-eps-56607837.jpg') no-repeat center center fixed; 	*/
-	/*background-size: cover !important;*/
+body
+{
+	background: url('../images/solar2.jpg') no-repeat center center fixed;
+	background-size: cover !important;
 }
 
-.container{
-
+.container
+{
+	opacity:0.8;
 }
 
-.jumbotron{
-	background-color: #000 !important;
+.jumbotron
+{
+	background: none !important;
 	color: #fff !important;
 }
 
-.panel-heading{
+.panel-heading
+{
 	background-color: #428bca !important;
 	color: #fff !important;
 }
 
-
-#trains{
+#jumpers
+{
 	position: relative;
 	width: 100%; 
 }
 
-#trains th{
+#jumpers th
+{
 	font-weight: bold;
 }
 
-#trains tr{
+#jumpers tr
+{
 	line-height: 34px;
 }
 
-#trains tr:first-child{
+#jumpers tr:first-child
+{
 	border-bottom: 1px #ccc solid;
 }
 
-#submit-btn{
+#submit-btn
+{
 	background-color: #428bca !important;
 	color: #fff !important;	
 }
